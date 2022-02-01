@@ -25,11 +25,20 @@ function rowColToIndex(board, row, col){
     return index;
 }
 
+function indexToRowCol(board, i){
+
+    let boardRow = board.rows;
+
+
+    let pos = {row: Math.floor(i/boardRow), col: i%boardRow};
+    return pos;
+}
+
 module.exports = {
 
 generateBoard: generateBoard,
 rowColToIndex: rowColToIndex,
-
+indexToRowCol: indexToRowCol,
 }
 
 
