@@ -84,7 +84,7 @@ describe('connectmoji', function() {
         });
     });
     
-    describe.only('setCells', function() {
+    describe('setCells', function() {
         it('places multiple values on board', function() {
             const board = c.generateBoard(3, 3, ' ');
             const updatedBoard = c.setCells(
@@ -119,7 +119,7 @@ describe('connectmoji', function() {
     });
     
 
-    describe('boardToString', function() {
+    describe.only('boardToString', function() {
         it('creates string version of board', function() {
             let board = c.generateBoard(6, 7);
             board = c.setCells(
