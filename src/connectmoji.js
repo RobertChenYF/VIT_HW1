@@ -44,12 +44,29 @@ function setCell(board, row, col, value){
     return newB;
 }
 
+function setCells(board, ...args){
+
+    let arr = board.data.slice();
+    
+    
+
+    for(let i = 0; i < args.length; i++){
+
+        arr[rowColToIndex(board,args[i].row,args[i].col)] = args[i].val;
+
+    }
+
+let newB =  {data: arr, rows: board.rows, cols: board.cols};
+return newB;
+}
+
 module.exports = {
 
 generateBoard: generateBoard,
 rowColToIndex: rowColToIndex,
 indexToRowCol: indexToRowCol,
 setCell: setCell,
+setCells: setCells,
 
 }
 
