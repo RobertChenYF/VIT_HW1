@@ -111,6 +111,15 @@ function boardToString(board){
 return boardString;
 }
 
+function letterToCol(letter){
+
+    if(letter.length != 1){
+        return null;
+    }
+    let col = letter.charCodeAt(0) - 65; 
+    return (col >=0 && col <=26) ? col : null;
+
+}
 
 
 
@@ -122,6 +131,7 @@ indexToRowCol: indexToRowCol,
 setCell: setCell,
 setCells: setCells,
 boardToString: boardToString,
+letterToCol: letterToCol,
 
 }
 

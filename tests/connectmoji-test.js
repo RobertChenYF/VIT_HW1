@@ -119,7 +119,7 @@ describe('connectmoji', function() {
     });
     
 
-    describe.only('boardToString', function() {
+    describe('boardToString', function() {
         it('creates string version of board', function() {
             let board = c.generateBoard(6, 7);
             board = c.setCells(
@@ -158,7 +158,7 @@ describe('connectmoji', function() {
         });
     });
 
-    describe('letterToCol', function() {
+    describe.only('letterToCol', function() {
         it('translates a letter to a column value (A = 0, B = 1)', function() {
             expect(c.letterToCol("A")).to.equal(0);
             expect(c.letterToCol("Z")).to.equal(25);
