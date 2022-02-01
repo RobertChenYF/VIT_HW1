@@ -18,11 +18,17 @@ function generateBoard(rows, cols, fill){
     return board;
 }
 
+function rowColToIndex(board, row, col){
+
+    let index = row * board.rows + col;
+
+    return index;
+}
 
 module.exports = {
 
 generateBoard: generateBoard,
-
+rowColToIndex: rowColToIndex,
 
 }
 
