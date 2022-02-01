@@ -50,7 +50,7 @@ describe('connectmoji', function() {
         });
     });
 
-    describe('setCell', function() {
+    describe.only('setCell', function() {
         it('sets the cell to the value specified by row and col', function() {
             let board = c.generateBoard(2, 3, ' ');
             board = c.setCell(board, 1, 1, 'X');
@@ -65,16 +65,22 @@ describe('connectmoji', function() {
         it('does not mutate original board passed in', function() {
             const board = c.generateBoard(2, 3, ' ');
             const updatedBoard = c.setCell(board, 1, 1, 'X');
+          
+            
             expect(updatedBoard).to.deep.equal({
               data: [' ', ' ', ' ', ' ', 'X', ' '],
               rows: 2,
               cols: 3
             });
+          
+            
             expect(board).to.deep.equal({
               data: [' ', ' ', ' ', ' ', ' ', ' '],
               rows: 2,
               cols: 3
             });
+
+            
         });
     });
     

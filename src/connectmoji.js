@@ -20,7 +20,7 @@ function generateBoard(rows, cols, fill){
 
 function rowColToIndex(board, row, col){
 
-    let index = row * board.rows + col;
+    let index = row * board.cols + col;
 
     return index;
 }
@@ -34,11 +34,23 @@ function indexToRowCol(board, i){
     return pos;
 }
 
+function setCell(board, row, col, value){
+
+    let arr = board.data.slice();
+    
+    let newB =  {data: arr, rows: board.rows, cols: board.cols};
+
+    newB.data[rowColToIndex(newB,row,col)] = value;
+    return newB;
+}
+
 module.exports = {
 
 generateBoard: generateBoard,
 rowColToIndex: rowColToIndex,
 indexToRowCol: indexToRowCol,
+setCell: setCell,
+
 }
 
 
