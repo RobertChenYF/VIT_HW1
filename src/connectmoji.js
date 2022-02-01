@@ -121,7 +121,40 @@ function letterToCol(letter){
 
 }
 
+function getEmptyRowCol(board, letter, empty = null){
 
+    let col = letterToCol(letter);
+    if(col === null || col > board.cols-1){
+        return null;
+    }
+
+    
+    for(let i = board.rows -1; i >= 0; i--){
+
+     if(board.data[rowColToIndex(board,i,col)] === empty){
+
+        if(i > 0 && i < board.rows -1 && 
+            !(board.data[rowColToIndex(board,i-1,col)] === empty) &&
+            !(board.data[rowColToIndex(board,i+1,col)] === empty)){
+
+            continue;
+        }
+       let obj = {row: i, col: col};
+       return obj;
+
+        }
+
+    }
+
+return null;
+}
+
+let board = generateBoard(4, 3);
+board = setCells(
+  board, 
+  {row: 0, col: 0, val: '😄'},
+);
+console.log(boardToString(board));
 
 module.exports = {
 
@@ -132,6 +165,8 @@ setCell: setCell,
 setCells: setCells,
 boardToString: boardToString,
 letterToCol: letterToCol,
+getEmptyRowCol: getEmptyRowCol,
+
 
 }
 

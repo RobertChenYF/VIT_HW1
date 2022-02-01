@@ -158,7 +158,7 @@ describe('connectmoji', function() {
         });
     });
 
-    describe.only('letterToCol', function() {
+    describe('letterToCol', function() {
         it('translates a letter to a column value (A = 0, B = 1)', function() {
             expect(c.letterToCol("A")).to.equal(0);
             expect(c.letterToCol("Z")).to.equal(25);
